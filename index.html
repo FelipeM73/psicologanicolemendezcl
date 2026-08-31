@@ -235,6 +235,15 @@ nav.menu a:hover{color:var(--ink);}
 
 .area-face{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;}
 .area-icon{font-size:26px;margin-bottom:16px;opacity:.85;}
+.area-icon-image{
+  width:52px;
+  height:52px;
+  object-fit:cover;
+  border-radius:16px;
+  margin-bottom:16px;
+  display:block;
+  box-shadow:0 12px 22px -16px rgba(75,68,60,0.3);
+}
 .area-title{font-size:19px;font-weight:500;letter-spacing:0.01em;margin-bottom:10px;line-height:1.35;}
 .area-hint{font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:auto;display:flex;align-items:center;gap:6px;}
 .area-hint::after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .4s ease;}
@@ -254,10 +263,20 @@ nav.menu a:hover{color:var(--ink);}
 @media(max-width:600px){.como-grid{grid-template-columns:1fr;}}
 .como-block{text-align:left;}
 .como-illus{
-  width:100%;aspect-ratio:1/0.82;border-radius:var(--radius-lg);
-  overflow:hidden;margin-bottom:20px;box-shadow:var(--shadow-soft);
+  width:100%;aspect-ratio:1/0.75;border-radius:var(--radius-lg);
+  overflow:hidden;margin-bottom:18px;box-shadow:var(--shadow-soft);
+  background:#fff;
 }
 .como-illus svg{width:100%;height:100%;display:block;}
+.como-illus img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+  background:#fff;
+  padding:6px;
+}
 .como-title{font-size:16.5px;font-weight:500;margin-bottom:8px;}
 .como-text{font-size:14.5px;color:var(--ink-soft);}
 
@@ -312,7 +331,7 @@ nav.menu a:hover{color:var(--ink);}
 }
 @media(max-width:800px){.recursos-wrap{grid-template-columns:1fr;padding:34px;}}
 .book-mock{
-  aspect-ratio:0.75/1;border-radius:22px;background:var(--cream) url('img/ebook-portada.jpeg') center/cover no-repeat;
+  aspect-ratio:0.75/1;border-radius:22px;background:var(--cream) url('img/ebook-portada.png') center/cover no-repeat;
   box-shadow:0 30px 50px -18px rgba(75,68,60,0.35);
   display:flex;align-items:center;justify-content:center;text-align:center;padding:34px;
 }
@@ -332,10 +351,17 @@ nav.menu a:hover{color:var(--ink);}
 .bio-full p{font-size:15px;color:var(--ink-soft);}
 .nature-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px;}
 .nature-slot{
-  aspect-ratio:1.2/1;border-radius:var(--radius-lg);
+  aspect-ratio:1/0.85;border-radius:var(--radius-lg);
   background:linear-gradient(150deg,var(--mint) 0%,var(--sky) 100%);
   box-shadow:var(--shadow-soft);display:flex;align-items:center;justify-content:center;
-  color:var(--ink-soft);font-size:12.5px;text-align:center;padding:14px;
+  color:var(--ink-soft);font-size:12.5px;text-align:center;padding:0;
+  overflow:hidden;
+}
+.nature-slot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 
@@ -374,6 +400,38 @@ footer a:hover{color:var(--coral);}
 .instagram-float:hover{transform:scale(1.08);}
 .instagram-float img{width:32px;height:32px;object-fit:contain;}
 .wa-float img{width:32px;height:32px;object-fit:contain;}
+
+.contact-whatsapp-link,
+.contact-instagram-link{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:88px;height:88px;border-radius:0;background:transparent;
+  box-shadow:none;transition:transform .3s ease;vertical-align:middle;
+  margin:0;
+  transform:translateY(-1px);
+}
+.contact-whatsapp-link:hover,
+.contact-instagram-link:hover{transform:scale(1.08) translateY(-1px);}
+.contact-whatsapp-link img,
+.contact-instagram-link img{
+  width:88px;height:88px;object-fit:contain;display:block;filter:none;
+}
+
+.footer-contact-row{
+  display:flex;flex-direction:column;align-items:flex-start;gap:12px;
+  margin-top:10px;
+}
+.footer-contact-row .email-link{
+  display:inline-block;
+  color:rgba(251,247,240,0.85);
+}
+.footer-contact-row .contact-instagram-link,
+.footer-contact-row .contact-whatsapp-link{
+  margin-left:0;
+}
+
+.footer-social-row{
+  display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-wrap:wrap;
+}
 
 
 @media(max-width:900px){
@@ -468,8 +526,8 @@ footer a:hover{color:var(--coral);}
           <!-- FOTO PRINCIPAL: reemplazar src para actualizar esta imagen -->
           <img src="img/nicole_2.png" alt="Nicole Méndez Clavería sonriendo">
         </div>
-        <div class="floaty f1">🌿 Mirada integral</div>
-        <div class="floaty f2">🤍 Espacio confidencial</div>
+        <div class="floaty f1">✨ Mirada integral</div>
+        <div class="floaty f2">🤍 Espacio seguro</div>
       </div>
     </div>
   </div>
@@ -486,7 +544,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🌿</div>
+          <img class="area-icon-image" src="img/area_1.png" alt="Ansiedad, estrés y estado de ánimo">
           <div class="area-title">Ansiedad, estrés y estado de ánimo</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">La ansiedad, el estrés, la angustia o los cambios en el estado de ánimo pueden aparecer cuando algo en nuestra experiencia necesita ser escuchado y comprendido. En terapia exploramos aquello que sostiene estas vivencias para desarrollar nuevas formas de relacionarse con ellas.</p>
@@ -496,7 +554,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🔄</div>
+          <img class="area-icon-image" src="img/area_2.png" alt="Patrones de pensamiento, emoción y conducta">
           <div class="area-title">Patrones de pensamiento, emoción y conducta</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">A lo largo de la vida desarrollamos formas aprendidas de pensar, sentir y actuar que influyen en cómo interpretamos lo que vivimos y respondemos ante distintas situaciones. Comprender estos patrones permite ampliar la mirada y abrir nuevas posibilidades de elección.</p>
@@ -506,7 +564,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">💧</div>
+          <img class="area-icon-image" src="img/area_3.png" alt="Regulación emocional">
           <div class="area-title">Regulación emocional</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Las emociones forman parte de la experiencia humana y cumplen una función importante. Regularlas no significa dejar de sentir, sino aprender a reconocerlas, comprenderlas y responder a ellas con mayor flexibilidad y consciencia.</p>
@@ -516,7 +574,8 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🫁</div>
+          <img class="area-icon-image" src="img/area_4.png" alt="El cuerpo como parte del proceso terapéutico">
+
           <div class="area-title">El cuerpo como parte del proceso terapéutico</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">El cuerpo también forma parte de nuestra experiencia. Además de prestar atención a las sensaciones corporales, a veces utilizamos recursos como la respiración, la postura y el movimiento, permitiendo explorar aquello que, a veces, las palabras no alcanzan a expresar.</p>
@@ -526,7 +585,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🌊</div>
+          <img class="area-icon-image" src="img/area_5.png" alt="Trauma y experiencias difíciles">
           <div class="area-title">Trauma y experiencias difíciles</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Algunas experiencias pueden dejar huellas en la manera de sentir, pensar, actuar y vincularse. La terapia ofrece un espacio para acercarse a ellas con cuidado, comprender su impacto e integrar la propia historia desde nuevas perspectivas.</p>
@@ -536,7 +595,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🤝</div>
+          <img class="area-icon-image" src="img/area_6.png" alt="Relaciones, cambios vitales y crecimiento personal">
           <div class="area-title">Relaciones, cambios vitales y crecimiento personal</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Los desafíos en los vínculos, los duelos, la migración, los cambios importantes o el deseo de conocerse mejor pueden convertirse en oportunidades para desarrollar nuevos recursos, fortalecer la relación consigo y construir una vida más coherente con quien cada persona es.</p>
@@ -558,23 +617,7 @@ footer a:hover{color:var(--coral);}
 
       <div class="como-block reveal">
         <div class="como-illus" style="background:var(--mint);">
-          <svg viewBox="0 0 300 246" preserveAspectRatio="xMidYMax slice">
-            <defs>
-              <filter id="wc1" x="-20%" y="-20%" width="140%" height="140%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="4" result="n"/>
-                <feDisplacementMap in="SourceGraphic" in2="n" scale="14"/>
-              </filter>
-            </defs>
-            <ellipse cx="150" cy="210" rx="120" ry="20" fill="#ffffff" opacity="0.35"/>
-            <g filter="url(#wc1)" fill="#8FC7AA" opacity="0.85">
-              <path d="M150 70c16 0 28 14 28 30 0 10-4 17-9 23 24 8 41 30 41 58H90c0-28 17-50 41-58-5-6-9-13-9-23 0-16 12-30 28-30z"/>
-              <path d="M96 178c-6 14-8 30-6 44h30c-4-16-4-32 4-46-10-2-19 0-28 2z" opacity="0.7"/>
-              <path d="M204 178c6 14 8 30 6 44h-30c4-16 4-32-4-46 10-2 19 0 28 2z" opacity="0.7"/>
-            </g>
-            <g filter="url(#wc1)" fill="#4B443C" opacity="0.28">
-              <circle cx="150" cy="92" r="17"/>
-            </g>
-          </svg>
+          <img src="img/como_1.png" alt="Fortalezas y potencial propio">
         </div>
         <div class="como-title">Posees fortalezas y un potencial propio</div>
         <p class="como-text">Comprendo tu vivencia más allá del problema o síntoma que estás atravesando, acompañándote a reencontrarte con las herramientas que ya existen en ti y a encontrar tus propias respuestas.</p>
@@ -582,21 +625,7 @@ footer a:hover{color:var(--coral);}
 
       <div class="como-block reveal">
         <div class="como-illus" style="background:var(--lavender);">
-          <svg viewBox="0 0 300 246" preserveAspectRatio="xMidYMax slice">
-            <defs>
-              <filter id="wc2" x="-20%" y="-20%" width="140%" height="140%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.014 0.03" numOctaves="2" seed="9" result="n"/>
-                <feDisplacementMap in="SourceGraphic" in2="n" scale="14"/>
-              </filter>
-            </defs>
-            <ellipse cx="150" cy="216" rx="110" ry="18" fill="#ffffff" opacity="0.35"/>
-            <g filter="url(#wc2)" fill="#B7A3DC" opacity="0.85">
-              <path d="M150 96c15 0 26 13 26 27 0 8-3 14-7 19 20 12 33 25 33 62h-52v-40l-26 40H92c0-40 15-56 36-70-4-5-6-11-6-19 0-14 13-19 28-19z"/>
-            </g>
-            <g filter="url(#wc2)" fill="#4B443C" opacity="0.28">
-              <circle cx="150" cy="118" r="15"/>
-            </g>
-          </svg>
+          <img src="img/como_2.png" alt="Trabajo corporal integrado">
         </div>
         <div class="como-title">Trabajo corporal integrado</div>
         <p class="como-text">El trabajo en consulta también puede integrar la experiencia corporal: atención al cuerpo, respiración y movimiento, para reconocer cómo se expresa lo emocional y explorar nuevas formas de habitarlo.</p>
@@ -604,21 +633,7 @@ footer a:hover{color:var(--coral);}
 
       <div class="como-block reveal">
         <div class="como-illus" style="background:var(--coral);">
-          <svg viewBox="0 0 300 246" preserveAspectRatio="xMidYMax slice">
-            <defs>
-              <filter id="wc3" x="-20%" y="-20%" width="140%" height="140%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.025" numOctaves="2" seed="14" result="n"/>
-                <feDisplacementMap in="SourceGraphic" in2="n" scale="16"/>
-              </filter>
-            </defs>
-            <path d="M0 190 Q150 160 300 190 V246 H0Z" fill="#ffffff" opacity="0.3"/>
-            <g filter="url(#wc3)" fill="#EFAE81" opacity="0.85">
-              <path d="M150 60c15 0 27 13 27 28 0 9-4 16-9 21-3 34 6 66 30 95h-96c24-29 33-61 30-95-5-5-9-12-9-21 0-15 12-28 27-28z"/>
-            </g>
-            <g filter="url(#wc3)" fill="#4B443C" opacity="0.28">
-              <circle cx="150" cy="84" r="16"/>
-            </g>
-          </svg>
+          <img src="img/como_3.png" alt="Prácticas entre sesiones">
         </div>
         <div class="como-title">Prácticas entre sesiones</div>
         <p class="como-text">Cuando resulta pertinente, propongo prácticas o ejercicios para realizar entre sesiones, adaptados a lo que necesitemos trabajar en cada momento del proceso.</p>
@@ -626,22 +641,7 @@ footer a:hover{color:var(--coral);}
 
       <div class="como-block reveal">
         <div class="como-illus" style="background:var(--sky);">
-          <svg viewBox="0 0 300 246" preserveAspectRatio="xMidYMax slice">
-            <defs>
-              <filter id="wc4" x="-20%" y="-20%" width="140%" height="140%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.013 0.028" numOctaves="2" seed="21" result="n"/>
-                <feDisplacementMap in="SourceGraphic" in2="n" scale="14"/>
-              </filter>
-            </defs>
-            <circle cx="150" cy="150" r="86" fill="#ffffff" opacity="0.25"/>
-            <g filter="url(#wc4)" fill="#9BCBDA" opacity="0.9">
-              <path d="M150 66c15 0 27 13 27 28 0 9-4 16-9 21 22 9 37 30 37 63H95c0-33 15-54 37-63-5-5-9-12-9-21 0-15 12-28 27-28z"/>
-              <ellipse cx="150" cy="150" rx="16" ry="10" opacity="0.9"/>
-            </g>
-            <g filter="url(#wc4)" fill="#4B443C" opacity="0.28">
-              <circle cx="150" cy="90" r="16"/>
-            </g>
-          </svg>
+          <img src="img/como_4.png" alt="Objetivos definidos en conjunto">
         </div>
         <div class="como-title">Objetivos definidos en conjunto</div>
         <p class="como-text">Al comenzar, definimos en conjunto los objetivos del proceso. A través del diálogo reflexivo y distintos ejercicios, ponemos orden en aquello que hoy puede resultar confuso.</p>
@@ -649,25 +649,7 @@ footer a:hover{color:var(--coral);}
 
       <div class="como-block reveal">
         <div class="como-illus" style="background:var(--pink);">
-          <svg viewBox="0 0 300 246" preserveAspectRatio="xMidYMax slice">
-            <defs>
-              <filter id="wc5" x="-20%" y="-20%" width="140%" height="140%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="30" result="n"/>
-                <feDisplacementMap in="SourceGraphic" in2="n" scale="14"/>
-              </filter>
-            </defs>
-            <ellipse cx="150" cy="214" rx="118" ry="18" fill="#ffffff" opacity="0.3"/>
-            <g filter="url(#wc5)" fill="#E5A9B7" opacity="0.75">
-              <path d="M118 86c14 0 25 12 25 26 0 8-3 14-7 19 18 10 30 26 30 55h-96c0-29 12-45 30-55-4-5-7-11-7-19 0-14 11-26 25-26z"/>
-            </g>
-            <g filter="url(#wc5)" fill="#E5A9B7" opacity="0.9">
-              <path d="M182 100c14 0 25 12 25 26 0 8-3 14-7 19 18 10 30 26 30 55h-96c0-29 12-45 30-55-4-5-7-11-7-19 0-14 11-26 25-26z"/>
-            </g>
-            <g filter="url(#wc5)" fill="#4B443C" opacity="0.28">
-              <circle cx="118" cy="108" r="14"/>
-              <circle cx="182" cy="122" r="14"/>
-            </g>
-          </svg>
+          <img src="img/como_5.png" alt="Mirada integral">
         </div>
         <div class="como-title">Mirada integral</div>
         <p class="como-text">Ampliamos la mirada para comprender con mayor perspectiva lo que te ocurre, explorando la relación entre pensamientos, emociones, cuerpo, historia, vínculos y contexto.</p>
@@ -675,21 +657,7 @@ footer a:hover{color:var(--coral);}
 
       <div class="como-block reveal">
         <div class="como-illus" style="background:var(--yellow);">
-          <svg viewBox="0 0 300 246" preserveAspectRatio="xMidYMax slice">
-            <defs>
-              <filter id="wc6" x="-20%" y="-20%" width="140%" height="140%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.011 0.026" numOctaves="2" seed="41" result="n"/>
-                <feDisplacementMap in="SourceGraphic" in2="n" scale="15"/>
-              </filter>
-            </defs>
-            <path d="M40 130c0-50 45-90 110-90s110 40 110 90-45 90-110 90S40 180 40 130Z" fill="#ffffff" opacity="0.3"/>
-            <g filter="url(#wc6)" fill="#E4D27E" opacity="0.95">
-              <path d="M150 78c16 0 28 14 28 30 0 10-4 17-9 23 24 8 41 30 41 58H90c0-28 17-50 41-58-5-6-9-13-9-23 0-16 12-30 28-30z"/>
-            </g>
-            <g filter="url(#wc6)" fill="#4B443C" opacity="0.25">
-              <circle cx="150" cy="100" r="17"/>
-            </g>
-          </svg>
+          <img src="img/como_6.png" alt="Espacio seguro y confidencial">
         </div>
         <div class="como-title">Espacio seguro y confidencial</div>
         <p class="como-text">Construimos un espacio seguro, confidencial y libre de juicios. Respetando siempre tu propio ritmo, generamos un clima de confianza donde tu experiencia pueda ser escuchada.</p>
@@ -727,20 +695,7 @@ footer a:hover{color:var(--coral);}
       <p class="script">Cada proceso comienza de una manera distinta. A veces con una pregunta, otras con una sensación difícil de explicar. Lo importante no es tener todo claro para empezar, sino darse la oportunidad de explorar aquello que hoy necesita ser escuchado.</p>
     </div>
 
-    <div class="faq-wrap reveal">
-      <div class="faq-item">
-        <button class="faq-q" data-faq>¿Pregunta que quieras agregar? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Respuesta</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" data-faq>¿Pregunta que quieras agregar? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Respuesta</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" data-faq>¿Pregunta que quieras agregar? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Respuesta</p></div>
-      </div>
-    </div>
+    
 
     <p class="section-intro center reveal" style="margin-bottom:40px;"><strong>La psicoterapia es un trabajo compartido:</strong> mi rol es acompañarte con conocimiento, herramientas y una escucha atenta; el tuyo es traer tu experiencia y tu disposición a explorarla. No se trata de hacerlo perfecto, sino de permitir que el proceso encuentre su propio curso.</p>
 
@@ -820,8 +775,12 @@ footer a:hover{color:var(--coral);}
         </div>
 
         <div class="nature-row">
-          <div class="nature-slot">🏔️ Foto de naturaleza<br>(bosque / cerro)</div>
-          <div class="nature-slot">🌲 Foto de naturaleza<br>(montaña)</div>
+          <div class="nature-slot">
+            <img src="img/natu_1.jpeg" alt="Foto de naturaleza - bosque">
+          </div>
+          <div class="nature-slot">
+            <img src="img/natu_2.jpeg" alt="Foto de naturaleza - montaña">
+          </div>
         </div>
       </div>
     </div>
@@ -839,7 +798,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🌿</div>
+          <img class="area-icon-image" src="img/taller_1.png" alt="Autocuidado y bienestar laboral">
           <div class="area-title">Autocuidado y bienestar laboral</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Espacios para reflexionar sobre las formas de cuidarnos en el trabajo, prevenir el desgaste y favorecer el bienestar individual y colectivo dentro de los equipos.</p>
@@ -849,7 +808,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">💧</div>
+          <img class="area-icon-image" src="img/taller_2.png" alt="Regulación emocional en el trabajo">
           <div class="area-title">Regulación emocional en el trabajo</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Herramientas para reconocer y gestionar las respuestas emocionales que pueden aparecer frente al estrés, la presión, los conflictos y los desafíos cotidianos del trabajo.</p>
@@ -859,7 +818,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">💬</div>
+          <img class="area-icon-image" src="img/taller_3.png" alt="Comunicación asertiva">
           <div class="area-title">Comunicación asertiva</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Trabajar formas de comunicación más claras y respetuosas, favoreciendo la expresión de necesidades, opiniones y límites dentro de los equipos.</p>
@@ -869,7 +828,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🔄</div>
+          <img class="area-icon-image" src="img/taller_4.png" alt="Resolución de conflictos">
           <div class="area-title">Resolución de conflictos</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Comprender las dinámicas que se generan en los conflictos y desarrollar recursos para abordarlos de manera constructiva.</p>
@@ -879,7 +838,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🌱</div>
+          <img class="area-icon-image" src="img/taller_5.png" alt="Liderazgo">
           <div class="area-title">Liderazgo</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Reflexionar sobre las formas de ejercer el liderazgo y favorecer estilos que promuevan la participación, la confianza, la comunicación y el bienestar de los equipos.</p>
@@ -889,7 +848,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🤝</div>
+          <img class="area-icon-image" src="img/taller_6.png" alt="Trabajo en equipo">
           <div class="area-title">Trabajo en equipo</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Fortalecer la colaboración, la coordinación y la confianza, considerando las distintas formas de trabajar y participar dentro de un equipo.</p>
@@ -899,7 +858,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🕊️</div>
+          <img class="area-icon-image" src="img/taller_7.png" alt="Experiencias difíciles en los equipos">
           <div class="area-title">Experiencias difíciles en los equipos</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Acompañar a equipos que han atravesado situaciones de impacto colectivo, como pérdidas, cambios importantes, crisis u otras experiencias que requieren un espacio de elaboración conjunta.</p>
@@ -909,7 +868,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🏫</div>
+          <img class="area-icon-image" src="img/taller_8.png" alt="Convivencia educativa">
           <div class="area-title">Convivencia educativa</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Talleres e intervenciones dirigidos a comunidades educativas, abordando convivencia, bienestar, relaciones entre los distintos estamentos y herramientas para favorecer una convivencia más saludable.</p>
@@ -919,7 +878,7 @@ footer a:hover{color:var(--coral);}
       <div class="area-card reveal" data-card>
         <div class="bloom"></div>
         <div class="area-face">
-          <div class="area-icon">🌿</div>
+          <img class="area-icon-image" src="img/taller_9.png" alt="Cultura y clima organizacional">
           <div class="area-title">Cultura y clima organizacional</div>
           <div class="area-hint">Toca para leer</div>
           <p class="area-text">Procesos de diagnóstico e intervención orientados a comprender las dinámicas de una organización, identificar necesidades y generar estrategias de acompañamiento.</p>
@@ -934,7 +893,7 @@ footer a:hover{color:var(--coral);}
       <p style="color:var(--ink-soft);">Cada propuesta se construye considerando las características, necesidades y objetivos de cada organización.</p>
       <p style="color:var(--ink-soft);margin-bottom:30px;">Actualmente, estos servicios se realizan de manera online.</p>
       <p style="font-weight:500;margin-bottom:18px;">¿Quieres conversar sobre una propuesta?</p>
-      <a href="#contacto" class="btn btn-primary">Contáctame</a>
+      <a href="#" class="btn btn-primary agenda-btn">Contáctame</a>
     </div>
   </div>
 </section>
@@ -959,8 +918,18 @@ footer a:hover{color:var(--coral);}
       </div>
       <div class="footer-cta">
         <h4>Conversemos</h4>
-        <p>[ps.nmendezclaveria@gmail.com] · [Instagram] · [WhatsApp+32494076061]</p>
-        <a href="#" class="btn btn-primary agenda-btn">Agenda tu sesión</a>
+        <div class="footer-contact-row">
+          <a href="mailto:ps.nmendezclaveria@gmail.com" class="email-link">[ps.nmendezclaveria@gmail.com]</a>
+          <div class="footer-social-row">
+            <a href="https://www.instagram.com/psicologanicolemendezcl/" class="contact-instagram-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <img src="img/insta_icon.png" alt="Instagram">
+            </a>
+            <a href="#" class="contact-whatsapp-link agenda-btn" aria-label="Enviar WhatsApp" target="_blank" rel="noopener">
+              <img src="img/icon_wsp.png" alt="WhatsApp">
+            </a>
+          </div>
+        </div>
+        
       </div>
     </div>
     <div class="footer-bottom">
